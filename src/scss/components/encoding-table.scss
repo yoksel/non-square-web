@@ -1,0 +1,26 @@
+.encoding-table {
+  width: 100% !important;
+  margin-left: 0 !important;
+  padding: 1rem;
+  border: none;
+  text-align: center;
+  font-size: 20px;
+  font-family: monospace;
+
+  TD,
+  TH {
+    padding: .45rem !important;
+    border: none;
+  }
+
+  TD {
+    min-width: 2em;
+    font-family: Georgia, serif;
+  }
+
+  SMALL {
+    display: none;
+  }
+
+}
+

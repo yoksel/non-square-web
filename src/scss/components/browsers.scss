@@ -1,0 +1,88 @@
+.browsers {
+  display: inline-block;
+  text-indent: 0;
+
+  DT {
+    display: inline-block;
+    width: 360px;
+    margin-right: 40px;
+  }
+}
+
+$browser-size: 64px;
+
+.browser {
+  display: inline-block;
+  position: relative;
+  width: $browser-size !important;
+  height: $browser-size !important;
+  margin: -.5rem 1rem;
+  background: url(../../assets/img/sprite-browsers-64.png) 0 0 no-repeat;
+  vertical-align: middle;
+  text-indent: 0;
+  &:after {
+    display: inline-block;
+    margin: -.5em 0 0;
+    padding: 0 5px 0 3.3em;
+    vertical-align: top;
+    font-size: .75em;
+    line-height: 1.4;
+    font-weight: bold;
+    white-space: nowrap;
+    }
+    .list--glasses & {
+      margin-right: 0;
+      }
+  }
+  .list--support-stacks .browser {
+    margin-right: 11px;
+    }
+  .no-support {
+    opacity: .5;
+    }
+
+.browser-partial {
+  overflow: hidden;
+  }
+.browser-flag:before{
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: -13px;
+  bottom: 5px;
+  width: 0;
+  height: 0;
+  border: 10px solid crimson;
+  border-width: 8px 12px;
+  border-right-color: transparent;
+  }
+.browser-partial:after,
+.browser-flag:after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top:  5px;
+    width: 70px;
+    height: 40px;
+    background: rgba(255,255,255,.7);
+    transform: rotate(-45deg);
+    transform-origin: right bottom;
+    }
+.chrome {
+  background-position: 0 0;
+  }
+.firefox {
+  background-position: 0 -#{$browser-size};
+  }
+.ie {
+  background-position: 0 -#{$browser-size*2};
+  }
+.edge {
+  background-position: 0 -#{$browser-size*3};
+  }
+.opera {
+  background-position: 0 -#{$browser-size*4};
+  }
+.safari {
+  background-position: 0 -#{$browser-size*5};
+  }

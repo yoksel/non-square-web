@@ -1,0 +1,50 @@
+.slide pre {
+  font-size: 20px;
+}
+
+.slide--code-from-spec pre {
+  font-size: 22px;
+}
+
+.slide pre mark,
+.slide pre code.mark:not(:only-child) {
+  background: khaki;
+}
+
+.slide pre code {
+  margin: 0;
+  padding: 0;
+  // width: auto;
+}
+
+pre[class*="language-"] {
+  background: #FFF;
+  margin-left: -1em;
+  padding-left: 1em;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+
+  & > code {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    line-height: 2em;
+    background-size: 4em 4em;
+  }
+}
+
+.slide pre code:not(:only-child)::before {
+  content: none;
+}
+
+.narrow-pre {
+  max-width: 530px;
+}
+
+.line-highlight {
+  background: hsla(50,100%,50%,.5);
+  mix-blend-mode: darken;
+}

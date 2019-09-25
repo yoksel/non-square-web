@@ -1,0 +1,54 @@
+<div class="variations-demo"></div>
+
+<script type="text/javascript">
+  (function(){
+      const target = document.querySelector('.variations-demo');
+      const container = document.createElement('div');
+      container.classList.add('variations-demo__container');
+      const charItem = document.createElement('div');
+      charItem.classList.add('variations-demo__char');
+      const tipItem = document.createElement('div');
+      tipItem.classList.add('variations-demo__tip');
+      charItem.innerHTML = 'a';
+      const itemsInLineX = 5 - 1;
+      const itemsInLineY = 5 - 1;
+      const itemsMax = itemsInLineX * itemsInLineY;
+      const wght = {
+        name: 'Weight',
+        min: 150,
+        max: 900
+      };
+      const wdth = {
+        name: 'Width',
+        min: 75,
+        max: 125
+      };
+      const weightStep = (wght.max - wght.min)/itemsInLineY;
+      const widthStep = (wdth.max - wdth.min)/itemsInLineX;
+
+      const variationsList = [
+        wght,
+        wdth
+      ];
+
+      for (var y = 0; y <= itemsInLineY; y ++) {
+        for (var x = 0; x <= itemsInLineX; x ++) {
+          const elem = charItem.cloneNode(true);
+          const itemWght = (itemsInLineY - y) * weightStep + wght.min;
+          const itemWdth = (x) * widthStep + wdth.min;
+
+          elem.style["font-variation-settings"] = `"wght" ${itemWght}, "wdth" ${itemWdth}`;
+          container.appendChild(elem);
+        }
+      }
+
+      variationsList.forEach(item => {
+        const elem = tipItem.cloneNode();
+        elem.classList.add(`variations-demo__tip--${item.name}`);
+        elem.innerHTML = `${item.name} ${item.min} &#8596; ${item.max}`;
+        container.appendChild(elem);
+      });
+
+      target.appendChild(container);
+    })()
+</script>

@@ -1,0 +1,36 @@
+.about-slide__author {
+  margin-bottom: 3rem;
+}
+
+.about-slide__name {
+  color: var(--color-grey);
+  font: bold 50px/1 'PT Sans Narrow', sans-serif;
+}
+
+.about-slide__company {
+  margin-left: .5rem;
+  font-weight: normal;
+  color: #777;
+}
+
+.slide .about-slide__list {
+  margin-bottom: 0;
+}
+
+.about-slide {
+  .column:last-child {
+    margin-left: auto;
+    flex-grow: 0;
+    padding-left: 5rem;
+  }
+}
+
+.about-slide__photo {
+  width: 230px;
+  height: 230px;
+  border-radius: 5px;
+}
+
+.about-slide__list + .about-slide__list {
+  margin-left: 5rem;
+}

@@ -1,0 +1,31 @@
+.img {
+  &--full {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.video {
+  height: 100%;
+}
+
+.disabled {
+  color: #999;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0 !important;
+}

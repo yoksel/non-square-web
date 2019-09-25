@@ -1,0 +1,30 @@
+.columns {
+  display: flex;
+  justify-content: space-between;
+  grid-column-gap: 0;
+
+  &--full-page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &--centered {
+    align-items: center;
+  }
+
+  .about-slide & {
+    align-items: flex-start;
+  }
+}
+
+.column {
+  position: relative;
+  padding-right: 3rem;
+  flex-grow: 1;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
