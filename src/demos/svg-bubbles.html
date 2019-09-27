@@ -1,0 +1,175 @@
+<!--
+  How bubble was made: https://codepen.io/yoksel/full/BzkyBJ
+-->
+
+<div class="bubbles-demo">
+  <div class="bubbles-demo__content">
+    <svg class="bubbles-demo__svg svg--defs">
+
+      <!-- Bubble transparency -->
+      <radialGradient id="grad--bw"
+              fx="25%" fy="25%">
+        <stop offset="0%"
+            stop-color="black"/>
+        <stop offset="30%"
+            stop-color="black"
+            stop-opacity=".2"/>
+        <stop offset="97%"
+            stop-color="white"
+            stop-opacity=".4"/>
+        <stop offset="100%"
+            stop-color="black"/>
+      </radialGradient>
+
+      <mask id="bubble-mask" maskContentUnits="objectBoundingBox">
+        <rect fill="url(#grad--bw)"
+          width="1" height="1"></rect>
+      </mask>
+
+      <!-- Light spot -->
+      <radialGradient id="grad--spot"
+              fx="50%" fy="20%">
+        <stop offset="10%"
+            stop-color="white"
+            stop-opacity=".7"/>
+        <stop offset="70%"
+            stop-color="white"
+            stop-opacity="0"/>
+      </radialGradient>
+
+      <!-- Top & bottom light -->
+      <radialGradient id="grad--bw-light"
+              _fx="25%" fy="10%">
+        <stop offset="60%"
+            stop-color="black"
+            stop-opacity="0"/>
+        <stop offset="90%"
+            stop-color="white"
+            stop-opacity=".25"/>
+        <stop offset="100%"
+            stop-color="black"/>
+      </radialGradient>
+
+      <mask id="bubble-mask--light-top" maskContentUnits="objectBoundingBox">
+        <rect fill="url(#grad--bw-light)"
+          width="1" height="1" transform="rotate(180, .5, .5)"></rect>
+      </mask>
+
+      <mask id="bubble-mask--light-bottom" maskContentUnits="objectBoundingBox">
+        <rect fill="url(#grad--bw-light)"
+          width="1" height="1"></rect>
+      </mask>
+
+      <!-- Colors of bubble -->
+      <linearGradient id="grad"
+          x1="0" y1="100%" x2="100%" y2="0">
+        <stop offset="0%" stop-color="dodgerblue"
+            class="stop-1"/>
+        <stop offset="50%" stop-color="fuchsia"
+            class="stop-2"/>
+        <stop offset="100%" stop-color="yellow"
+            class="stop-3"/>
+      </linearGradient>
+
+      <mask id="bubble-mask--collapse" maskContentUnits="objectBoundingBox">
+        <circle r=".5" cx=".5" cy=".5"
+            class="collapse-circle"
+            ></circle>
+      </mask>
+
+      <symbol id="splash">
+        <g class="splash__group"
+           fill="none"
+           stroke="white" stroke-opacity=".8">
+          <circle r="49%"
+            cx="50%" cy="50%"
+            stroke-width="3%"
+            stroke-dasharray="1% 10%"
+            class="splash__circle _hidden"
+            ></circle>
+          <circle r="44%"
+            cx="50%" cy="50%"
+            stroke-width="2%"
+            stroke-dasharray="1% 5%"                     class="splash__circle _hidden"
+            ></circle>
+          <circle r="39%"
+            cx="50%" cy="50%"
+            stroke-width="1%"
+            stroke-dasharray="1% 8%"
+            class="splash__circle _hidden"
+            ></circle>
+          <circle r="33%"
+            cx="50%" cy="50%"
+            stroke-width="3%"
+            stroke-dasharray="1% 6%"
+            class="splash__circle _hidden"
+            ></circle>
+          <circle r="26%"
+            cx="50%" cy="50%"
+            stroke-width="1%"
+            stroke-dasharray="1% 7%"
+            class="splash__circle _hidden"
+            ></circle>
+          <circle r="18%"
+            cx="50%" cy="50%"
+            stroke-width="1%"
+            stroke-dasharray="1% 8%"
+            class="splash__circle _hidden"
+            ></circle>
+        </g>
+      </symbol>
+    </svg>
+
+    <div class="bubbles-demo__defs hidden">
+      <svg class="bubbles-demo__svg bubbles-demo__bubble" viewBox="0 0 200 200">
+        <g class="bubbles-demo__group">
+          <ellipse rx="20%" ry="10%"
+             cx="150" cy="150"
+             fill="url(#grad--spot)"
+             transform="rotate(-225, 150, 150)"
+             class="bubbles-demo__shape _hidden"
+             ></ellipse>
+          <circle r="50%"
+            cx="50%" cy="50%"
+            fill="aqua"
+            mask="url(#bubble-mask--light-bottom)"
+            class="bubbles-demo__shape _hidden"
+            ></circle>
+          <circle r="50%"
+            cx="50%" cy="50%"
+            fill="yellow"
+            mask="url(#bubble-mask--light-top)"
+            class="bubbles-demo__shape _hidden"
+            ></circle>
+          <ellipse rx="55" ry="25"
+             cx="55" cy="55"
+             fill="url(#grad--spot)"
+             transform="rotate(-45, 55, 55)"
+             class="bubbles-demo__shape _hidden"
+             ></ellipse>
+          <circle r="50%"
+            cx="50%" cy="50%"
+            fill="url(#grad)"
+            mask="url(#bubble-mask)"
+            class="bubbles-demo__shape _hidden"
+            ></circle>
+        </g>
+
+        <use xlink:href="#splash" class="bubbles-demo__splash"/>
+
+        </g>
+      </svg>
+    </div>
+
+    <header class="bubbles-demo__header bubbles-demo-header">
+      <svg class="svg bubbles-demo-header__splash" viewBox="0 0 200 200">
+        <use xlink:href="#splash"/>
+      </svg>
+
+      <div class="bubbles-demo__title">
+        Bubbles
+        <span class="bubbles-demo__tip">Click bubble to burst it!</span>
+      </div>
+    </header>
+  </div>
+</div>

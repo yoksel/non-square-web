@@ -5,6 +5,9 @@
 .slide--code-from-spec pre {
   font-size: 22px;
 }
+.slide--rabbit pre {
+  font-size: 60px;
+}
 
 .slide pre mark,
 .slide pre code.mark:not(:only-child) {
@@ -18,9 +21,9 @@
 }
 
 pre[class*="language-"] {
-  background: #FFF;
-  margin-left: -1em;
-  padding-left: 1em;
+  background: none;
+  // margin-left: -1em;
+  // padding-left: 1em;
 
   &::before,
   &::after {

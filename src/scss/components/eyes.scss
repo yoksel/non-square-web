@@ -1,0 +1,106 @@
+.eye-wrapper {
+  position: relative;
+  height: 5em;
+  margin: 1em;
+  }
+.eye {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  width: 10em;
+  height: 4em;
+  overflow: hidden;
+  background: white;
+  border: 0 solid black;
+  border-width: 6px 0 1px;
+  border-radius: 50%;
+  animation: close-eye 2s infinite ease-in;
+  }
+
+.eyeball {
+  position: relative;
+  width: 5em;
+  height: 5em;
+  background: radial-gradient(skyblue 30%, steelblue);
+  box-shadow: 0 0 2px 3px rgba(0,0,0,.1);
+  border-radius: 50%;
+  }
+.eye-wrapper:nth-child(8n+1) .eyeball{
+  background: radial-gradient(yellowgreen 30%, green);
+  }
+.eye-wrapper:nth-child(8n+2) .eyeball {
+  background: radial-gradient(gold 30%, orangered);
+  }
+.eye-wrapper:nth-child(8n+3) .eyeball {
+  background: radial-gradient(crimson 30%, maroon);
+  }
+.eye-wrapper:nth-child(8n+4) .eyeball {
+  background: radial-gradient(darkturquoise 30%, navy);
+  }
+.eye-wrapper:nth-child(8n+5) .eyeball {
+  background: radial-gradient(saddlebrown 30%, tan);
+  }
+.eye-wrapper:nth-child(8n+6) .eyeball {
+  background: radial-gradient(darkviolet 30%, plum);
+  }
+.eye-wrapper:nth-child(8n+7) .eyeball {
+  background: radial-gradient(gray 30%, black);
+  }
+.eyeball:before,
+.eyeball:after {
+  content: "";
+  display: block;
+  position: absolute;
+  }
+.eyeball:before {
+  left: 50%;
+  top: 50%;
+  margin: -.7em 0 0 -.7em;
+  width: 1.5em;
+  height: 1.5em;
+  background: black;
+  box-shadow: 0 0 2px 3px rgba(0,0,0,.1);
+  border-radius: 50%;
+  }
+.eyeball:after {
+  left: 55%;
+  top: 30%;
+  width: 1em;
+  height: 1em;
+  background: #FFF;
+  opacity: .5;
+  border-radius: 50%;
+  }
+
+.eye-wrapper:nth-child(7n+1) .eye {
+  animation-delay: 1s;
+}
+.eye-wrapper:nth-child(7n+2) .eye {
+  animation-delay: 2s;
+}
+.eye-wrapper:nth-child(7n+3) .eye {
+  animation-delay: 3s;
+}
+.eye-wrapper:nth-child(7n+4) .eye {
+  animation-delay: 1.5s;
+}
+.eye-wrapper:nth-child(7n+5) .eye {
+  animation-delay: 2.5s;
+}
+.eye-wrapper:nth-child(7n+6) .eye {
+  animation-delay: 3.5s;
+}
+
+@keyframes close-eye {
+  30% {
+    height: 0em;
+    top: 2em;
+    animation-timing-function: ease-out;
+    }
+  60% {
+    height: 4em;
+    top: 0em;
+    }
+}

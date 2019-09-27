@@ -1,0 +1,686 @@
+.demo__item.gradient {
+  flex-basis: 25%;
+  flex-grow: 1;
+  box-shadow: 0 0 0 4px #000 inset;
+}
+
+.gradient {
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Stripes */
+
+.gradient--stripes {
+  background: linear-gradient(to left top,
+      transparent 48.9%,
+      skyblue 51%, skyblue 78%,
+      transparent 80%
+      ),
+    linear-gradient(to left top,
+      skyblue 28%,
+      transparent 30%
+      );
+  background-size: 1em 1em;
+  background-color: #FFF;
+}
+
+/* Cells */
+
+$cell-color: transparentize(crimson, .5);
+$transparent: rgba(0, 0, 0, 0);
+
+.gradient--cells {
+  background: linear-gradient(
+      $transparent 60%,
+      $cell-color 60%
+      ),
+    linear-gradient(90deg,
+      $transparent 60%,
+      $cell-color 60%
+      );
+  background-size: 2em 2em;
+  background-color: seashell;
+  background-position: center 1em;
+  font: 20px/2 'Trebuchet MS', Ver
+}
+
+/* Cicada */
+
+.gradient--cicada {
+  background: linear-gradient( 90deg,
+      rgba(255, 225, 132, .7) 50%, rgba(255,255,255, 0) 50%),
+    linear-gradient( 90deg,
+      rgba(32, 113, 120, .3) 50%, rgba(255,255,255, 0) 50%),
+    linear-gradient( 90deg,
+      rgba(255, 150, 102, .3) 50%, rgba(255,255,255, 0) 50%),
+    linear-gradient( 90deg,
+      rgba(23, 76, 79, .1) 50%, rgba(255,255,255, 0) 50%);
+  background-size: 7em 7em, 5em 5em, 3em 3em, 1em 1em;
+  background-color: #F5E9BE;
+}
+
+/* Notebook */
+
+.gradient--notebook {
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0) 1.8em, rgba(135, 206, 235, .5) 2em)
+      2em 0 repeat-y,
+    linear-gradient(
+      rgba(255,255,255, 0) 1.9em, rgba(0, 0, 0, .15) 2em)
+    0 0;
+  background-size: 2em 2em;
+  background-color: ivory;
+  font: 16px/2 'Trebuchet MS', Verdana, sans-serif;
+
+  P {
+    text-align: left;
+    margin: 1.25em 3em 1em 7em;
+  }
+}
+
+/* Hearts */
+
+$bgcolor: lightgoldenrodyellow;
+$transparent: rgba(255, 255, 255, 0);
+
+$color-1: #E83A25;
+$color-1-t: transparentize($color-1, 1);
+$color-2: #98CC96;
+$color-2-t: transparentize($color-2, 1);
+
+$size: 4em;
+$big-size: $size*2;
+$min: $size*.3;
+$max: $size*.7;
+
+.gradient--hearts {
+  background:
+    linear-gradient(135deg,
+      $color-1 $min,
+      $color-1-t $min
+      ) 0 #{$size},
+    linear-gradient(-135deg,
+      $color-1 $min,
+      $color-1-t $min
+      ) 0 #{$size},
+
+    radial-gradient(circle at #{$big-size - $min*.7} $size*1.85,
+      $color-1 $min*.85,
+      $color-1-t $min*.87
+      ) 0 -#{$size},
+    radial-gradient(circle at #{$min*.7} $size*1.85,
+      $color-1 $min*.85,
+      $color-1-t $min*.87
+      ) 0 -#{$size},
+
+
+    linear-gradient(135deg,
+      $color-2 $min,
+      $color-2-t $min
+      ) $size 0,
+    linear-gradient(-135deg,
+      $color-2 $min,
+      $color-2-t $min
+      ) $size 0,
+
+    radial-gradient(circle at #{$big-size - $min*.7} $size*1.85,
+      $color-2 $min*.85,
+      $color-2-t $min*.87
+      ) $size 0,
+    radial-gradient(circle at #{$min*.7} $size*1.85,
+      $color-2 $min*.85,
+      $color-2-t $min*.87
+      ) $size 0
+    ;
+  background-size:  $big-size $big-size;
+  background-color: $bgcolor;
+  background-repeat: repeat;
+  font-size: .5em;
+  }
+
+/* Waves */
+
+$transparent: rgba(255, 255, 255, 0);
+
+$bgcolor: #343844;
+
+$color-2: #FDC536;
+$color-3: #E65848;
+$color-4: #2AB69D;
+$color-1: #FCF2D7;
+
+$size: 2em;
+$big-size: $size*2;
+$min: $size/2.5;
+$max: $min*1.5;
+$step: $min*1.3;
+
+.gradient--waves {
+  background:
+    radial-gradient(circle at right,
+      $transparent $min,
+      $color-1 $min, $color-1 $max,
+      $transparent $max
+      ) 0 0,
+    radial-gradient(circle at left,
+      $transparent $min,
+      $color-1 $min, $color-1 $max,
+      $transparent $max
+      ) 0 $size,
+
+    radial-gradient(circle at right,
+      $transparent $min,
+      $color-2 $min, $color-2 $max,
+      $transparent $max
+      ) $step 0,
+    radial-gradient(circle at left,
+      $transparent $min,
+      $color-2 $min, $color-2 $max,
+      $transparent $max
+      ) $step $size,
+
+    radial-gradient(circle at right,
+      $transparent $min,
+      $color-3 $min, $color-3 $max,
+      $transparent $max
+      ) $step*2 0,
+    radial-gradient(circle at left,
+      $transparent $min,
+      $color-3 $min, $color-3 $max,
+      $transparent $max
+      ) $step*2 $size,
+
+    radial-gradient(circle at right,
+      $transparent $min,
+      $color-4 $min, $color-4 $max,
+      $transparent $max
+      ) $step*3 0,
+    radial-gradient(circle at left,
+      $transparent $min,
+      $color-4 $min, $color-4 $max,
+      $transparent $max
+      ) $step*3 $size
+    ;
+  background-size:  $big-size $big-size;
+  background-color: $bgcolor;
+  background-repeat: repeat;
+}
+
+/* Fishbone */
+
+$bgcolor: #F2ECD3;
+$transparent: rgba(255, 255, 255, 0);
+
+$color-1: #F2F2F2;
+$color-2: #C6E070;
+$color-3: #91C46C;
+$color-4: #287D7D;
+$color-5: #1C344D;
+
+$size: 2em;
+$big-size: $size*2;
+$min: $size*.2;
+$max: $size*.51;
+
+$diff: $max - $min;
+
+.gradient--fishbone {
+  background:
+    linear-gradient(to left bottom,
+      $transparent $min,
+      $color-5 $min, $color-5 $max,
+      $transparent $max
+      ) 0 0,
+    linear-gradient(to right top,
+      $transparent $min,
+      $color-5 $min, $color-5 $max,
+      $transparent $max
+      ) $size 0,
+
+    linear-gradient(to left bottom,
+      $transparent $min,
+      $color-3 $min, $color-3 $max,
+      $transparent $min
+      ) 0 $max,
+    linear-gradient(to right top,
+      $transparent $min,
+      $color-3 $min, $color-3 $max,
+      $transparent $min
+      ) $size $max,
+
+    linear-gradient(to left bottom,
+      $transparent $min,
+      $color-4 $min, $color-4 $max,
+      $transparent $min
+      ) 0 $max*2,
+    linear-gradient(to right top,
+      $transparent $min,
+      $color-4 $min, $color-4 $max,
+      $transparent $min
+      ) $size $max*2,
+
+    linear-gradient(to left bottom,
+      $transparent $min,
+      $color-2 $min, $color-2 $max,
+      $transparent $min
+      ) 0 $max*3,
+    linear-gradient(to right top,
+      $transparent $min,
+      $color-2 $min, $color-2 $max,
+      $transparent $min
+      ) $size $max*3,
+    /* - - - - - */
+    linear-gradient(to right bottom,
+      $transparent $min,
+      $color-2 $min, $color-2 $max,
+      $transparent $max
+      ) 0 0,
+    linear-gradient(to left top,
+      $transparent $min,
+      $color-2 $min, $color-2 $max,
+      $transparent $max
+      ) $size 0,
+
+    linear-gradient(to right bottom,
+      $transparent $min,
+      $color-5 $min, $color-5 $max,
+      $transparent $min
+      ) 0 $max,
+    linear-gradient(to left top,
+      $transparent $min,
+      $color-5 $min, $color-5 $max,
+      $transparent $min
+      ) $size $max,
+
+    linear-gradient(to right bottom,
+      $transparent $min,
+      $color-3 $min, $color-3 $max,
+      $transparent $min
+      ) 0 $max*2,
+    linear-gradient(to left top,
+      $transparent $min,
+      $color-3 $min, $color-3 $max,
+      $transparent $min
+      ) $size $max*2,
+
+    linear-gradient(to right bottom,
+      $transparent $min,
+      $color-4 $min, $color-4 $max,
+      $transparent $min
+      ) 0 $max*3,
+    linear-gradient(to left top,
+      $transparent $min,
+      $color-4 $min, $color-4 $max,
+      $transparent $min
+      ) $size $max*3
+    ;
+  background-size:  $big-size $big-size;
+  background-color: $bgcolor;
+  background-repeat: repeat;
+  font: 16px/2 'Trebuchet MS', Verdana, sans-serif;
+  }
+
+/* Paper */
+
+$darkness: 15%;
+$color-1: #F2385A;
+$color-1-d: darken($color-1, $darkness);
+$color-1-t: transparentize($color-1, 1);
+
+$color-2: #F5A503;
+$color-2-d: darken($color-2, 10%);
+$color-2-t: transparentize($color-2, 1);
+
+$color-3: #E9F1DF;
+$color-3-d: darken($color-3, $darkness);
+$color-3-t: transparentize($color-3, 1);
+
+$color-4: #4AD9D9;
+$color-4-d: darken($color-4, $darkness);
+$color-4-t: transparentize($color-4, 1);
+
+$color-5: #36B1BF;
+$color-5-d: darken($color-5, $darkness);
+$color-5-t: transparentize($color-5, 1);
+
+$size: 5em;
+$size-half: $size/2;
+$begin: $size/10.3;
+$step: $size/6;
+$offset: $step*1.2;
+
+$bgcolor: linen;
+
+.gradient--paper {
+  background:
+    linear-gradient(to right top,
+      $color-1-t $begin,
+      $color-1 $begin,
+      $color-1,
+      $color-1-d $begin + $step,
+      $color-1-t $begin + $step
+      ) 0 0,
+    linear-gradient(to left top,
+      $color-1-t $begin,
+      $color-1 $begin, $color-1,
+      $color-1-d $begin + $step,
+      $color-1-t $begin + $step
+    ) 0 0,
+
+    linear-gradient(to right bottom,
+      $color-1-t $begin,
+      $color-1-d $begin,
+      $color-1,
+      $color-1 $begin + $step,
+      $color-1-t $begin + $step
+      ) $size-half 0,
+    linear-gradient(to left bottom,
+      $color-1-t $begin,
+      $color-1-d $begin, $color-1,
+      $color-1 $begin + $step,
+      $color-1-t $begin + $step
+    ) $size-half 0,
+
+    /* - - - - - */
+
+    linear-gradient(to right top,
+      $color-2-t $begin,
+      $color-2 $begin,
+      $color-2,
+      $color-2-d $begin + $step,
+      $color-2-t $begin + $step
+      ) 0 $offset,
+    linear-gradient(to left top,
+      $color-2-t $begin,
+      $color-2 $begin, $color-2,
+      $color-2-d $begin + $step,
+      $color-2-t $begin + $step
+    ) 0  $offset,
+
+    linear-gradient(to right bottom,
+      $color-2-t $begin,
+      $color-2-d $begin,
+      $color-2,
+      $color-2 $begin + $step,
+      $color-2-t $begin + $step
+      ) $size-half  $offset,
+    linear-gradient(to left bottom,
+      $color-2-t $begin,
+      $color-2-d $begin, $color-2,
+      $color-2 $begin + $step,
+      $color-2-t $begin + $step
+    ) $size-half $offset,
+
+    /* - - - - - */
+
+    linear-gradient(to right top,
+      $color-3-t $begin,
+      $color-3 $begin,
+      $color-3,
+      $color-3-d $begin + $step,
+      $color-3-t $begin + $step
+      ) 0 $offset*2,
+    linear-gradient(to left top,
+      $color-3-t $begin,
+      $color-3 $begin, $color-3,
+      $color-3-d $begin + $step,
+      $color-3-t $begin + $step
+    ) 0  $offset*2,
+
+    linear-gradient(to right bottom,
+      $color-3-t $begin,
+      $color-3-d $begin,
+      $color-3,
+      $color-3 $begin + $step,
+      $color-3-t $begin + $step
+      ) $size-half $offset*2,
+    linear-gradient(to left bottom,
+      $color-3-t $begin,
+      $color-3-d $begin, $color-3,
+      $color-3 $begin + $step,
+      $color-3-t $begin + $step
+    ) $size-half $offset*2,
+
+    /* - - - - - */
+
+    linear-gradient(to right top,
+      $color-4-t $begin,
+      $color-4 $begin,
+      $color-4,
+      $color-4-d $begin + $step,
+      $color-4-t $begin + $step
+      ) 0 $offset*3,
+    linear-gradient(to left top,
+      $color-4-t $begin,
+      $color-4 $begin, $color-4,
+      $color-4-d $begin + $step,
+      $color-4-t $begin + $step
+    ) 0  $offset*3,
+
+    linear-gradient(to right bottom,
+      $color-4-t $begin,
+      $color-4-d $begin,
+      $color-4,
+      $color-4 $begin + $step,
+      $color-4-t $begin + $step
+      ) $size-half $offset*3,
+    linear-gradient(to left bottom,
+      $color-4-t $begin,
+      $color-4-d $begin, $color-4,
+      $color-4 $begin + $step,
+      $color-4-t $begin + $step
+    ) $size-half $offset*3,
+
+    /* - - - - - */
+
+    linear-gradient(to right top,
+      $color-5-t $begin,
+      $color-5 $begin,
+      $color-5,
+      $color-5-d $begin + $step,
+      $color-5-t $begin + $step
+      ) 0 $offset*4,
+    linear-gradient(to left top,
+      $color-5-t $begin,
+      $color-5 $begin, $color-5,
+      $color-5-d $begin + $step,
+      $color-5-t $begin + $step
+    ) 0  $offset*4,
+
+    linear-gradient(to right bottom,
+      $color-5-t $begin,
+      $color-5-d $begin,
+      $color-5,
+      $color-5 $begin + $step,
+      $color-5-t $begin + $step
+      ) $size-half $offset*4,
+    linear-gradient(to left bottom,
+      $color-5-t $begin,
+      $color-5-d $begin, $color-5,
+      $color-5 $begin + $step,
+      $color-5-t $begin + $step
+    ) $size-half $offset*4
+    ;
+
+  background-color: $bgcolor;
+  background-size: $size $size;
+}
+
+/* Blending modes
+------------------------------ */
+
+/* Blue squares */
+
+$transparent: rgba(255, 255, 255, 0);
+
+
+$gradient: $transparent 20%,
+      skyblue 40%,
+      steelblue 60%,
+      $transparent 60%;
+
+$gradient-corner-left:
+      skyblue,
+      steelblue 25%,
+      $transparent 25%;
+
+$gradient-corner-right:
+      $transparent 65%,
+      skyblue 65%;
+
+.gradient--blue-squares {
+  background:
+
+    linear-gradient(45deg,
+      $gradient-corner-right),
+    linear-gradient(-45deg,
+      $gradient-corner-right),
+
+    linear-gradient(135deg,
+      $gradient-corner-right),
+    linear-gradient(-135deg,
+      $gradient-corner-right),
+
+    linear-gradient(45deg,
+      $gradient-corner-left),
+    linear-gradient(-45deg,
+      $gradient-corner-left),
+    linear-gradient(135deg,
+      $gradient-corner-left),
+    linear-gradient(-135deg,
+      $gradient-corner-left),
+
+    linear-gradient(45deg,
+      $gradient),
+    linear-gradient(-45deg,
+      $gradient);
+
+  background-size: 2em 6em;
+  background-color: skyblue;
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+}
+
+/* Sea waves */
+
+$transp: rgba(255,255,255,0);
+
+$colors-blue:
+  hsl(180, 60%, 65%), $transp,
+  hsl(170, 70%, 50%), $transp,
+  hsl(160, 70%, 45%), $transp,
+  hsl(170, 70%, 50%), $transp,
+  hsl(180, 60%, 65%), $transp;
+
+$blue: (
+  colors: $colors-blue,
+  bg-color: hsl(180, 70%, 45%)
+);
+
+@function gradient($colors) {
+
+  $out: $transp;
+  $step: percentage(1/length($colors)/2);
+
+  @for $item from 1 through length($colors) {
+    $color: nth($colors, $item);
+
+    $pos-before: $step * ($item - 1);
+    $pos-after: $step * $item;
+
+    $out: append($out, $color $pos-before, comma);
+    $out: append($out, $color $pos-after, comma);
+  }
+
+  @return $out;
+}
+
+@mixin gradient-set ($colors-set: $cold){
+  $grad-colors: map-get($colors-set, colors);
+  $bg-color: map-get($colors-set, bg-color);
+  $size: 2;//length($grad-colors);
+  $sizeUnits: #{$size}em;
+  $halfUnits: #{$size/2}em;
+
+  background-image:
+    radial-gradient(circle at left, gradient($grad-colors)),
+    radial-gradient(circle at right, gradient($grad-colors)),
+    radial-gradient(circle at left, gradient($grad-colors)),
+    radial-gradient(circle at right, gradient($grad-colors));
+  background-color: $bg-color;
+  background-size: $sizeUnits $sizeUnits;
+  background-repeat: repeat;
+  background-position:
+    0 0,
+    0 $halfUnits,
+    $halfUnits 0,
+    $halfUnits $halfUnits;
+  }
+
+$mode: luminosity;
+
+.gradient--sea-waves {
+  @include gradient-set($blue);
+  background-blend-mode: $mode, $mode, $mode, $mode;
+}
+
+/* Rainbow corners */
+
+$transp: rgba(255,255,255,0);
+
+$colors-warm:
+  white,
+  lightblue,
+  skyblue,
+  steelblue,
+  darken(steelblue, 10%),
+  red,
+  lighten(red, 20%),
+  orange,
+  gold,
+  lighten(gold, 30%);
+
+$warm: (
+  colors: $colors-warm,
+  bg-color: orangered
+);
+
+@function gradient($colors, $direct: 60deg) {
+
+  $out: null;
+
+  @for $item from 1 through length($colors) {
+    $color: nth($colors, $item);
+    $pos: percentage($item/length($colors)/2);
+
+    $out-string: $color #{$pos - 10}, $color #{$pos};
+    $out: append($out, $out-string, comma);
+  }
+
+  @for $item from 1 through length($colors) {
+    $color: nth($colors, $item);
+    $pos: percentage($item/length($colors)/2) + 50;
+
+    $out-string: $color #{$pos - 10}, $color #{$pos};
+    $out: append($out, $out-string, comma);
+  }
+
+  @return linear-gradient($direct, $out);
+}
+
+@mixin gradient-set ($colors-set: $cold,$direct: 60deg, $size: 6){
+  $grad-colors: map-get($colors-set, colors);
+  $bg-color: map-get($colors-set, bg-color);
+
+  background-image: gradient($grad-colors,$direct),
+    gradient($grad-colors, $direct: -$direct);
+  background-color: $bg-color;
+  background-size: #{$size}em #{$size*1.72}em;
+  background-repeat: repeat;
+  }
+
+.gradient--rainbow-corners {
+  @include gradient-set($warm, 60deg, 6);
+  background-blend-mode: multiply, normal;
+  }

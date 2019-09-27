@@ -1,0 +1,28 @@
+.arrow {
+  border: 3em solid red;
+  border-color: red green gold blue;
+}
+
+.arrow--top {
+  border-top: 0;
+  border-color: transparent;
+  border-bottom-color: orangered;
+}
+
+.arrow--right {
+  border-right: 0;
+  border-color: transparent;
+  border-left-color: yellowgreen;
+}
+
+.arrow--bottom {
+  border-bottom: 0;
+  border-color: transparent;
+  border-top-color: teal;
+}
+
+.arrow--left {
+  border-left: 0;
+  border-color: transparent;
+  border-right-color: gold;
+}

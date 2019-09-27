@@ -1,0 +1,31 @@
+.svg-mask-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.svg-mask-steps__sign {
+  font-size: 5rem;
+  padding: 1rem;
+}
+
+.demo--svg-masks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -1px -9px 0;
+
+  .demo__item {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  svg {
+    margin-bottom: 0;
+  }
+}

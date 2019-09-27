@@ -1,0 +1,74 @@
+.corners {
+  width: 300px;
+  height: 200px;
+  // background: red;
+  }
+
+.corners--chamfered {
+  background:
+    linear-gradient(45deg, transparent 1em, orangered 1em),
+    linear-gradient(-45deg, transparent 1em, orangered 1em),
+    linear-gradient(135deg, transparent 1em, orangered 1em),
+    linear-gradient(-135deg, transparent 1em, orangered 1em)
+    ;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position:
+      left bottom,
+      right bottom,
+      left top,
+      right top;
+  }
+.corners--bitten {
+  background:
+    radial-gradient(circle at left top, transparent 1em, gold 1em),
+    radial-gradient(circle at right top, transparent 1em, gold 1em),
+    radial-gradient(circle at right bottom, transparent 1em, gold 1em),
+    radial-gradient(circle at left bottom, transparent 1em, gold 1em)
+    ;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position:
+      left top,
+      right top,
+      right bottom,
+      left bottom;
+}
+.corners--polygonal {
+  display: flex;
+
+  .corners__content {
+    background: yellowgreen;
+    flex-grow: 1;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    width: 1em;
+  }
+
+  &::before {
+    background:
+      linear-gradient(to right top, transparent 50%, yellowgreen 50%),
+      linear-gradient(to right bottom, transparent 50%, yellowgreen 50%)
+      ;
+    background-size: 100% 31%, 100% 70%;
+    background-repeat: no-repeat;
+    background-position:
+      left bottom,
+      left top;
+  }
+
+  &::after {
+    background:
+      linear-gradient(to left top, transparent 50%, yellowgreen 50%),
+      linear-gradient(to left bottom, transparent 50%, yellowgreen 50%)
+      ;
+    background-size: 100% 70%, 100% 31%;
+    background-repeat: no-repeat;
+    background-position:
+      left bottom,
+      left top;
+  }
+}

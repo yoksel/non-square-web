@@ -1,0 +1,52 @@
+.demo .bullets {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.bullets {
+  font-size: 2em;
+
+  LI {
+    &::before {
+      position: relative;
+      display: inline-block;
+      width: auto;
+      vertical-align: middle;
+      transform: none;
+    }
+  }
+}
+
+.bullets--ul {
+  LI {
+    &::before {
+      content: "" !important;
+      width: .75em;
+      height: .75em;
+      margin-right: .5em;
+      opacity: 1;
+      border-radius: 50%;
+      background: gold;
+      background-image: linear-gradient(teal, turquoise);
+    }
+  }
+}
+
+.bullets--ol {
+  LI {
+    &::before {
+      content: counter(list) !important;
+      height: 1.2em;
+      margin-right: .25em;
+      padding: 0 .5em;
+      background-image: linear-gradient(-75deg,
+        transparent 20%,
+        teal 20%, turquoise 80%,
+        transparent 80%);
+      line-height: 1.2em;
+      vertical-align: baseline;
+      text-shadow: .075em .075em teal;
+      color: #FFF;
+    }
+  }
+}

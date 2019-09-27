@@ -1,0 +1,39 @@
+.demo--radius {
+  // height: 90%;
+}
+
+.radius {
+  position: relative;
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: url(../../assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg);
+    background-size: cover;
+  }
+}
+
+.radius--round::before {
+  border-radius: 50%;
+}
+
+.radius--semi-round::before {
+  border-radius: 1em;
+}
+
+.radius--drop::before {
+  border-radius: 50% 0 50% 50%;
+}
+
+.radius--shaped::before {
+  width: 120px;
+  border-radius: 80% / 100% 100% 60% 60%;
+}

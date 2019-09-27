@@ -1,0 +1,70 @@
+<svg>
+  <linearGradient id="gradient" x1="0" y1="0" x2 ="110%" y2="0%">
+    <stop stop-color="#fff" offset="0"/><stop stop-color="#fff" offset="10%"/>
+    <stop stop-color="#AAA" offset="10%"/><stop stop-color="#AAA" offset="20%"/>
+    <stop stop-color="#777" offset="20%"/><stop stop-color="#777" offset="30%"/>
+    <stop stop-color="#333" offset="30%"/><stop stop-color="#333" offset="40%"/>
+    <stop stop-color="#000" offset="40%"/><stop stop-color="#000" offset="50%"/>
+    <stop stop-color="#fff" offset="50%"/><stop stop-color="#fff" offset="60%"/>
+    <stop stop-color="#AAA" offset="60%"/><stop stop-color="#AAA" offset="70%"/>
+    <stop stop-color="#777" offset="70%"/><stop stop-color="#777" offset="80%"/>
+    <stop stop-color="#333" offset="80%"/><stop stop-color="#333" offset="90%"/>
+    <stop stop-color="#000" offset="90%"/><stop stop-color="#000" offset="100%"/>
+  </linearGradient>
+
+  <mask id="mask"  x="0" y="0" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+    <rect y="0" width="1" height="1" fill="url(#gradient)" />
+    <circle cx=".5" cy=".5" r=".42" fill="black" />
+
+    <circle cx="0" cy=".5" r=".32" fill="black" />
+    <circle cx="1" cy=".5" r=".32" fill="black" />
+
+    <circle cx="0" cy=".5" r=".3" fill="gray" />
+    <circle cx=".5" cy=".5" r=".4" fill="gray" />
+    <circle cx="1" cy=".5" r=".3" fill="gray" />
+
+    <circle cx="0" cy=".5" r=".25" fill="white" />
+    <circle cx=".5" cy=".5" r=".35" fill="white" />
+    <circle cx="1" cy=".5" r=".25" fill="white" />
+  </mask>
+
+  <radialgradient id="mask-radial-gradient" cy="52%" fy="5.5%">
+    <stop stop-color="#FFF" offset="50%" />
+    <stop stop-color="#000" offset="100%" />
+  </radialgradient>
+
+  <mask id="mask-soft" maskunits="objectBoundingBox" maskcontentunits="objectBoundingBox" x="0" y="0">
+    <rect y="0" width="1" height="1" fill="url(#mask-radial-gradient)" />
+  </mask>
+
+  <mask id="mask-shells" x="0" y="0">
+    <image xlink:href="./assets/img/demo/shells.png" width="250" height="375" />
+  </mask>
+
+  <mask id="mask-bird" x="0" y="0" width="250" height="375" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+    <rect x="0" y="0" width="100%" height="100%"/>
+    <image xlink:href="./assets/img/demo/bird.gif"
+      width="250" height="375"></image>
+  </mask>
+
+  <mask id="mask-shape" x="0" y="0" width="200" height="200" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+    <g fill-rule="nonzero" fill="none"><path d="M77.5 0c36.784 0 67.583 25.627 75.516 60H200v140H60v-46.984C25.627 145.083 0 114.284 0 77.5 0 34.698 34.698 0 77.5 0zM190 70h-35.358c.237 2.468.358 4.97.358 7.5 0 42.802-34.698 77.5-77.5 77.5-2.53 0-5.032-.121-7.5-.358V190h120V70zm-45.412 0H70v74.588c2.462.272 4.965.412 7.5.412 37.28 0 67.5-30.22 67.5-67.5 0-2.535-.14-5.038-.412-7.5zM77.5 10C40.22 10 10 40.22 10 77.5c0 31.227 21.205 57.501 50 65.21V60h82.71C135 31.205 108.726 10 77.5 10z" fill-opacity=".2" fill="#000"/><circle fill="#757575" cx="77.5" cy="77.5" r="67.5"/><path fill="#FFF" d="M70 70h120v120H70z"/><path fill="#000" d="M100 100h60v60h-60z"/></g>
+  </mask>
+
+  <mask id="mask-shape-alpha" x="0" y="0" width="200" height="200" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse" mask-type="alpha">
+    <g fill-rule="nonzero" fill="none"><path d="M77.5 0c36.784 0 67.583 25.627 75.516 60H200v140H60v-46.984C25.627 145.083 0 114.284 0 77.5 0 34.698 34.698 0 77.5 0zM190 70h-35.358c.237 2.468.358 4.97.358 7.5 0 42.802-34.698 77.5-77.5 77.5-2.53 0-5.032-.121-7.5-.358V190h120V70zm-45.412 0H70v74.588c2.462.272 4.965.412 7.5.412 37.28 0 67.5-30.22 67.5-67.5 0-2.535-.14-5.038-.412-7.5zM77.5 10C40.22 10 10 40.22 10 77.5c0 31.227 21.205 57.501 50 65.21V60h82.71C135 31.205 108.726 10 77.5 10z" fill-opacity=".2" fill="#000"/><circle fill="#757575" cx="77.5" cy="77.5" r="67.5"/><path fill="#FFF" d="M70 70h120v120H70z"/><path fill="#000" d="M100 100h60v60h-60z"/></g>
+  </mask>
+
+  <mask id="mask-text" x="0" y="0"  width="100%" height="100%" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse">
+    <rect x="0" y="0" width="100%" height="100%"/>
+
+    <text
+      id="mask-text__text"
+      x="50%" y="50%" dy=".315em"
+      text-anchor="middle"
+      >
+      SVG Mask
+    </text>
+  </mask>
+
+</svg>

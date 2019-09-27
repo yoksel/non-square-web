@@ -1,13 +1,10 @@
-
-@font-face {
-  font-family: KairosSans;
-  font-display: swap;
-  src: url(https://yoksel.github.io/variable-fonts/assets/fonts/KairosSans/KairosSans_Variable.ttf) format("truetype");
-}
-
 .demo {
   position: relative;
   height: 100%;
+}
+
+H4 + .demo{
+  max-height: 90%;
 }
 
 .demo--centered {
@@ -34,19 +31,42 @@
   flex-wrap: wrap;
   text-align: center;
   justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
 
-  SPAN {
-    margin: 1rem 0;
+  .demo__item {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .demo__item--wide {
+    flex-basis: 100%;
   }
 }
 
-.demo--decovar {
-  .font {
-    margin: 0;
-    font-size: 180px;
-    color: #000;
+.demo--list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .demo__item {
+    display: flex;
+    align-items: center;
+  }
+
+  .demo__item + .demo__item {
+    margin-top: 1rem;
+  }
+
+  pre[class*="language-"] {
+    margin-left: 3rem;
+  }
+}
+
+.demo--mask-images {
+  flex-wrap: nowrap;
+
+  .demo__item {
+    flex-direction: column;
   }
 }
 
@@ -54,43 +74,29 @@
   text-transform: uppercase;
 }
 
-.demo--languages {
-  padding: 0 2rem;
-  align-content: space-evenly;
+.demo__item {
+  /*outline: 1px dashed #DDD;*/
+  position: relative;
+  background:
+      linear-gradient(#DDD 1px, transparent 1px),
+      linear-gradient(to right, #DDD 1px, transparent 1px);
+  background-repeat: repeat-x, repeat-y;
+  background-size: 100% 1px, 1px 100%;
+  background-position: 0 50%, 50% 0;
 
-  .font {
-    height: 190px;
-    margin: 0;
-    padding-bottom: 30px;
-    flex-basis: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 100px;
-    color: #000;
-
-    &--big {
-      font-size: 150px;
-    }
-  }
+  background: none;
 }
 
-.demo--emoji {
-  padding: 0 50px;
-
-  .font {
-    font-size: 190px;
-  }
+.demo__item--arrow {
+  flex-grow: 0;
+  flex-basis: auto !important;
+  font-size: 3em;
 }
 
-.demo--tiny {
-  display: flex;
-  height: auto;
-
-  .font {
-    margin-right: 2rem;
-    font-size: 120px;
-  }
+.demo__item .browser {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .demo__example {

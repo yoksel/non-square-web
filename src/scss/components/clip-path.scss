@@ -1,0 +1,78 @@
+.demo--clip-path {
+  height: 90%;
+
+  pre[class*="language-"],
+  code[class*="language"] {
+    width: 100%;
+    white-space: normal;
+  }
+}
+
+.clip-path {
+  position: relative;
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  // outline: 1px dashed #CCC;
+
+  .text-centered & {
+    margin: auto;
+    width: 250px;
+    height: 250px;
+  }
+  .text-centered &--heart {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.clip-path::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../../assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg);
+  background-size: cover;;
+}
+
+.clip-path--inset::before {
+  clip-path: inset(10px 20px);
+}
+.clip-path--circle::before {
+  clip-path: circle(50% at 50% 50%);
+}
+.clip-path--ellipse::before {
+  clip-path: ellipse(30% 50% at 70% 50%);
+}
+.clip-path--rhomb::before {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.clip-path--polygon::before {
+  clip-path: polygon(67.84% 0.4%, 99.61% 33.55%, 95.83% 76.29%, 37.26% 100%, 0% 75.87%, 22.99% 20.35%);
+}
+
+.clip-path--star::before {
+  clip-path: url("#path-star");
+}
+.clip-path--heart::before {
+  clip-path: url("#path-heart");
+}
+
+.clip-path--heart-rel,
+.clip-path--heart-abs {
+  outline: 1px dashed #CCC;
+}
+
+.clip-path--heart-abs {
+  outline: 1px dashed #CCC;
+
+  &::before {
+    clip-path: url("#path-heart-abs");
+  }
+}
+
+.clip-path--leaf::before {
+  clip-path: url("#path-leaf");
+}

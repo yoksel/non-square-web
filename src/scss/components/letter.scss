@@ -1,0 +1,88 @@
+.slide--letter {
+  background: #222;
+}
+
+.letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 400px;
+  box-sizing: border-box;
+  background: #FFF;
+  border: 1em solid transparent;
+
+  background-image:
+    linear-gradient(white, white),
+    repeating-linear-gradient(
+      to right bottom,
+      white,
+      orangered .015em, orangered 1em,
+      white 1.015em, white 2em,
+      steelblue 2.015em, steelblue 3em,
+      white 3.015em, white 4em
+      );
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  box-shadow:
+    0 0 50px rgba(0,0,0,.5),
+    0 40px 20px -20px rgba(0,0,0,.75);
+
+  A {
+    line-height: 1;
+    text-decoration: none;
+
+  }
+}
+
+.letter__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.letter__decor {
+  display: none;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0 2em;
+  color: steelblue;
+  border: 2px solid currentColor;
+  background: linear-gradient(to left, currentColor 100px, transparent 101px);
+  transform: skew(-45deg);
+}
+
+.letter__input,
+.letter__button {
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: none;
+  margin: 0;
+  font: inherit;
+  font-size: .9em;
+  border: 2px solid #CCC;
+  border-radius: 3px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus ~ .letter__decor {
+    color: turquoise;
+  }
+}
+
+.letter__input {
+  padding-left: 1rem;
+  margin-right: 1rem;
+}
+
+.letter__button {
+  padding: 0 2rem;
+  background: #CCC;
+}

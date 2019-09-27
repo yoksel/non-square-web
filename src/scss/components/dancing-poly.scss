@@ -1,0 +1,91 @@
+$poly-dur: 20s;
+$poly-delay: $poly-dur / 9;
+
+.slide--poly {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='80%25' height='90%25' x='10%25' y='5%25' stroke='rgba(255,255,255,.15)' fill='none'/%3E%3C/svg%3E");
+  background-size: 7% 25%;
+  background-position: 50% 50%;
+}
+
+.dancing-poly {
+  width: 100%;
+}
+
+.base-grad-color {
+  animation: stops $poly-dur linear infinite;
+}
+
+.base-grad-color--1 {
+  stop-color:#FF0000;
+}
+.base-grad-color--2{
+  stop-color: #FFE400;
+  animation-delay: -$poly-delay * 2;
+}
+.base-grad-color--3{
+  stop-color: #FFE600;
+  animation-delay: -$poly-delay * 5;
+}
+.base-grad-color--4{
+  stop-color: #FFE600;
+  animation-delay: -$poly-delay * 8;
+}
+.base-grad-color--5{
+  stop-color: #FFE400;
+  animation-delay: -$poly-delay * 3;
+}
+.base-grad-color--6{
+  stop-color: steelblue;
+  animation-delay: -$poly-delay * 7;
+}
+.base-grad-color--7{
+  stop-color: #00F4FB;
+  animation-delay: -$poly-delay * 4;
+}
+.base-grad-color--8{
+  stop-color: #FF9001;
+  animation-delay: -$poly-delay * 6;
+}
+
+@keyframes stops {
+  0% {
+    stop-color: #FF9001;
+    fill: #FF9001;
+  }
+  12% {
+    stop-color: #FFE400;
+    fill: #FFE400;
+  }
+  25% {
+    stop-color: #FF0000;
+    fill: #FF0000;
+  }
+  37% {
+    stop-color: greenyellow;
+    fill: greenyellow;
+  }
+  50% {
+    stop-color: #FFE600;
+    fill: #FFE600;
+  }
+  62.5% {
+    stop-color: steelblue;
+    fill: steelblue;
+  }
+  75% {
+    stop-color: crimson;
+    fill: crimson;
+  }
+  87.5% {
+    stop-color: #00F4FB;
+    fill: #00F4FB;
+  }
+  100% {
+    stop-color: #FF9001;
+    fill: #FF9001;
+  }
+}
+
+.dancing-poly__rect {
+  animation: stops 5s linear infinite;
+}

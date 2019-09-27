@@ -1,0 +1,89 @@
+.demo__item--mask-example {
+  max-width: 230px;
+}
+
+.mask {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  // outline: 1px dashed #CCC;
+}
+
+.mask::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../../assets/img/demo/yoksel-zok-Z_rdomcVLwE-unsplash.jpg);
+  background-size: cover;
+}
+
+.mask--gradient::before {
+  mask-image: linear-gradient(to right top,
+    rgba(0,0,0,1) 25%, rgba(0,0,0,0) 75%);
+}
+
+.mask--image::before {
+  mask-image: url(../../assets/img/demo/tile.png);
+  mask-size: 50% 50%;
+}
+
+.mask--svg::before {
+  mask-image: url(#mask);
+  // mask-size: 50% 50%;
+}
+
+.mask--svg-img {
+  width: 200px;
+  height: 200px;
+  mask-image: url(../../assets/img/mask-shape.svg);
+}
+
+.mask--mode-lumi {
+  mask-mode: luminance;
+}
+
+.mask-wrapper {
+  position: relative;
+  margin: 2rem 0;
+  padding: .5em;
+  width: 200px;
+  height: 200px;
+
+  &--bg {
+     // background: linear-gradient(to right top, deeppink, gold);
+     background: url(../../assets/img/gray-cells.png);
+     background-size: 120px 120px;
+  }
+
+  &--svg::before {
+    content: "SVG";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: khaki;
+    border-radius: 5px;
+    line-height: 1;
+    padding: .2em;
+    font-size: .8em;
+  }
+}
+
+.demo--mask-images {
+  CODE,
+  .demo__item-footer {
+    font-size: 21px;
+  }
+
+  CODE {
+    background: none;
+  }
+
+  .demo__item-footer {
+    white-space: nowrap;
+  }
+}
+
+

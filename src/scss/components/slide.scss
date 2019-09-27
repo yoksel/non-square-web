@@ -42,11 +42,11 @@
   left: auto;
   right: 25px;
   font-size: 24px;
-
 }
 
 .slide--no-label::after {
- content: none;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 
@@ -56,6 +56,20 @@
 
 .slide--dark {
   background: #000;
+}
+
+.slide--css-icons {
+  IMG {
+    max-height: 93%;
+  }
+}
+
+.slide--lemons {
+  background: #190d23;
+}
+
+.slide--francine {
+  background-image: linear-gradient(to bottom, #2c3521, #0b0e07);
 }
 
 .slide {
@@ -68,6 +82,8 @@
 .slide--main-title {
   H2 {
     font-weight: normal;
+    text-shadow: 0 0 5px black,
+                 0 0 10px black;
   }
 }
 
@@ -90,6 +106,12 @@
   align-items: center;
   align-content: center;
   justify-content: center;
+
+  .or {
+    display: block;
+    flex-basis: 100%;
+    text-align: center;
+  }
 }
 
  .slide--column {
@@ -112,15 +134,11 @@
 
 .slide H2,
 .slide H3,
-.slide H4 {
+.slide H4,
+.slide H5 {
   color: var(--color-grey);
   font: bold 50px/1 'PT Sans Narrow', sans-serif;
-  margin-bottom: .75em;
-
-  SPAN {
-    font: normal 25px/2 'PT Sans', sans-serif;;
-    color: #777;
-  }
+  // margin-bottom: .75em;
 }
 
 .slide H3 {
@@ -131,9 +149,20 @@
   font-size: 34px;
 }
 
+.slide H5 {
+  font-size: 30px;
+}
+
+.slide Ul + H4,
+.slide Ul + H5 {
+  margin-top: 1.5em;
+}
+
 .slide--section-title H2,
+.slide--questions H2,
 .slide--section-title H3,
-.slide--section-title H4  {
+.slide--section-title H4,
+.dancing-poly__text {
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
@@ -147,8 +176,14 @@
   font-size: 130px;
 }
 
-.slide--section-title H2 {
+.slide--section-title H2,
+.slide--questions H2 {
   font-size: 110px;
+}
+
+.dancing-poly__text {
+  font-size: 200px;
+  letter-spacing: 3px;
 }
 
 .slide--section-title H3 {
@@ -159,6 +194,22 @@
   font-size: 80px;
 }
 
+.comparison {
+  font-size: 45px;
+  line-height: 1.1;
+  font-family: 'PT Sans Narrow', sans-serif;
+  text-align: center;
+
+  & + & {
+    margin-top: 1em;
+  }
+
+  DEL {
+    font-weight: normal;
+    color: #777;
+  }
+}
+
 .slide--dark {
 
   H1,
@@ -166,8 +217,13 @@
   H3,
   P {
     color: #FFF;
+    fill: currentColor;
 
   }
+}
+
+.slide--support {
+  background: #F2E8D5;
 }
 
 /* Slide components */
@@ -175,6 +231,14 @@
 .slides-link {
   position: absolute;
   bottom: 1em;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.qr-code {
+  width: 300px;
+  height: 300px;
 }
 
 .slide__tips-wrapper {
@@ -206,11 +270,6 @@
     // box-shadow: 0 0 10px rgba(0,0,0,.5);
   }
 
-  &--paper-photo {
-    right: auto;
-    left: 90px;
-  }
-
   .slide__tips-wrapper & {
     position: static;
   }
@@ -218,4 +277,16 @@
 
 .slide__term {
   font-style: italic;
+}
+
+
+/* Allow animation only on active slide */
+*,
+*::before,
+*::after {
+  animation-play-state: paused !important;
+
+  .active & {
+    animation-play-state: running !important;
+  }
 }

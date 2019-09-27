@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Mouse Memoirs';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Mouse Memoirs'),
+    local('MouseMemoirs-Regular'),
+    url(../../assets/fonts/MouseMemoirs-Regular.ttf) format('woff2');
+}
+
+.slide--bubbles {
+  background-color: lightyellow;
+  background: radial-gradient(lightyellow, gold, teal, indigo);
+
+  .copyright {
+    user-select: none;
+  }
+}
+
+.hidden {
+    display: none;
+}
+
+.bubbles-demo__svg {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  overflow: visible;
+  mix-blend-mode: multiply;
+}
+
+.bubbles-demo__svg--defs {
+  width: 0;
+  height: 0;
+}
+
+.bubbles-demo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.bubbles-demo__header {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  bottom: 1rem;
+  text-shadow: 0 0 15px rgba(0,0,0,.5);
+  color: #FFF;
+  cursor: pointer;
+}
+
+.bubbles-demo__title {
+  margin: 0 !important;
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 4.9rem;
+  font-weight: 400;
+  line-height: 1;
+  user-select: none;
+}
+
+.bubbles-demo-header__splash {
+  position: absolute;
+  top: -75px;
+  left: -40px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bubbles-demo__tip {
+  display: block;
+  font-size: 1rem;
+  font-family: Trebuchet MS;
+}
+
+.bubbles-demo__bubble {
+  cursor: pointer;
+}
+
+.bubbles-demo__splash {
+  opacity: 0;
+  pointer-events: none;
+}
+

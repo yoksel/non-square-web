@@ -1,0 +1,159 @@
+$shadow-size: 15vh;
+$shadow-offset: $shadow-size * 1.5;
+$shadow-colors:
+  purple,
+  orangered,
+  violet,
+  teal,
+  gold,
+  crimson,
+  yellowgreen,
+  orange,
+  darkturquoise,
+  pink,
+  steelblue,
+  turquoise,
+  tomato,
+  teal,
+  darkviolet,
+  limegreen;
+$colors-max: length($shadow-colors);
+
+$shadows-steps: 4;
+$colors-in-step: round($colors-max/$shadows-steps);
+
+$title-text-color: white;
+$title-bg-color: black;
+
+$matrix-h: 30;
+$matrix-v: 20;
+
+@function get_color($position){
+  $color: nth($shadow-colors, 1);
+
+
+  @if ($position < $colors-max) {
+    $color: nth($shadow-colors, $position);
+  }
+  @else {
+    $fixed-position: $position % $colors-max + 1;
+    $color: nth($shadow-colors, $fixed-position);
+  }
+
+  @return $color;
+}
+
+@function shadow-matrix ($color-offset: 0){
+  $out: null;
+  $cell-counter: 1;
+
+  @for $cell_column from 1 through $matrix-v {
+    $step-v: ($cell_column - 1) * $shadow-offset;
+
+    @for $cell_row from 1 through $matrix-h {
+      $color: get_color($cell-counter + $color-offset);
+
+      $step-h: ($cell_row - 1) * $shadow-offset;
+      $out: append($out, $step-h $step-v $shadow-size $shadow-size $color, comma);
+
+      $cell-counter: $cell-counter + 1;
+    }
+  }
+
+  @return $out;
+}
+
+
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Lobster'),
+    local('Lobster-Regular'),
+    url(../../assets/fonts/Lobster-Regular.ttf) format('woff2');
+}
+
+.aurora-borealis {
+
+  &__title {
+    position: absolute;
+    top: -1.5em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    }
+
+  &__text-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    font-size: 10rem;
+    line-height: 1.05;
+    font-style: italic;
+    font-family: Lobster;
+    font-weight: normal;
+    background: $title-bg-color;
+    text-shadow:
+      0 .1rem $title-bg-color,
+      0 .2rem $title-bg-color,
+      0 .3rem $title-bg-color,
+      0 .4rem $title-bg-color,
+      0 .6rem $title-bg-color,
+      0 .7rem $title-text-color,
+      0 .8rem $title-text-color;
+    color: $title-text-color;
+    mix-blend-mode: darken;
+    }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: shadow-matrix();
+    animation: shadows-cells 3s linear infinite;
+    }
+
+&__text-items {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: 3.3em;
+  margin: 0 auto;
+  transform: translateY(-50%) rotate(-10deg);
+  text-align: center;
+  }
+
+&__text-item {
+  display: block;
+  position: relative;
+
+  &--2 {
+    margin-left: -.5em;
+    }
+  &--3 {
+    margin-left: -.8em;
+    }
+  }
+}
+
+@keyframes shadows-cells {
+  25% {
+    box-shadow: shadow-matrix($colors-in-step*2);
+  }
+  45% {
+    box-shadow: shadow-matrix($colors-in-step);
+  }
+  75% {
+    box-shadow: shadow-matrix($colors-in-step*3);
+  }
+}

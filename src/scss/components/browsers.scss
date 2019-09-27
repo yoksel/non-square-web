@@ -9,7 +9,7 @@
   }
 }
 
-$browser-size: 64px;
+$browser-size: 80px;
 
 .browser {
   display: inline-block;
@@ -18,8 +18,10 @@ $browser-size: 64px;
   height: $browser-size !important;
   margin: -.5rem 1rem;
   background: url(../../assets/img/sprite-browsers-64.png) 0 0 no-repeat;
+  background-size: contain;
   vertical-align: middle;
   text-indent: 0;
+
   &:after {
     display: inline-block;
     margin: -.5em 0 0;
@@ -38,8 +40,22 @@ $browser-size: 64px;
     margin-right: 11px;
     }
   .no-support {
-    opacity: .5;
+    // opacity: .5;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      height: .75rem;
+      background: #FFF;
+      transform: rotate(-45deg);
     }
+  }
 
 .browser-partial {
   overflow: hidden;
@@ -69,20 +85,20 @@ $browser-size: 64px;
     transform-origin: right bottom;
     }
 .chrome {
-  background-position: 0 0;
+  background-image: url(../../assets/img/browsers/chrome.svg);
   }
 .firefox {
-  background-position: 0 -#{$browser-size};
+  background-image: url(../../assets/img/browsers/firefox.svg);
   }
 .ie {
-  background-position: 0 -#{$browser-size*2};
+  background-image: url(../../assets/img/browsers/internet-explorer_9-11_128x128.png);
   }
 .edge {
-  background-position: 0 -#{$browser-size*3};
+  background-image: url(../../assets/img/browsers/edge.svg);
   }
 .opera {
-  background-position: 0 -#{$browser-size*4};
+  background-image: url(../../assets/img/browsers/opera.svg);
   }
 .safari {
-  background-position: 0 -#{$browser-size*5};
+  background-image: url(../../assets/img/browsers/safari_128x128.png);
   }

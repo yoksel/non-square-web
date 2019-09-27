@@ -1,0 +1,38 @@
+.relative-path {
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  PRE {
+    margin-bottom: 0;
+  }
+
+  ul > li:lang(ru)::before {
+    content: '•';
+  }
+}
+
+
+.relative-path__examples {
+  display: inline-flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.relative-path__darr {
+  width: 100%;
+  text-align: center;
+}
+
+.relative-path__tool {
+  margin-top: 2rem;
+  line-height: 1.4;
+}
+
+.relative-path__result {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
