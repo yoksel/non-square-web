@@ -1,0 +1,62 @@
+$ob-stripe-height: 80px;
+$ob-stripe-color-bg: white;
+$ob-stripe-color-1: greenyellow;
+$ob-stripe-color-2: mediumturquoise;
+
+.oblique-edge {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+
+  P {
+    position: relative;
+    margin: 0;
+    padding: $ob-stripe-height/2 150px $ob-stripe-height * 1.1;
+    background: $ob-stripe-color-1;
+
+    &::before,
+    &::after {
+      position: absolute;
+      right: 0;
+      left: 0;
+      height: $ob-stripe-height;
+    }
+
+    &::before {
+      top: 0;
+    }
+    &::after {
+      content: "";
+      bottom: 0;
+      outline-offset: -2px;
+      background: linear-gradient(
+        to right bottom,
+        $ob-stripe-color-1 50%,
+        $ob-stripe-color-2 0);
+    }
+  }
+
+  P:nth-child(1) {
+    padding-top: $ob-stripe-height * 1.35;
+
+    &::before {
+      content: "";
+      background: linear-gradient(
+        to right bottom,
+        $ob-stripe-color-bg 50%,
+        $ob-stripe-color-1 0);
+    }
+  }
+
+  P:nth-child(2) {
+    background: $ob-stripe-color-2;
+
+    &::after {
+      background: linear-gradient(
+        to right bottom,
+        $ob-stripe-color-2 50%,
+        $ob-stripe-color-bg 0);
+    }
+  }
+}
