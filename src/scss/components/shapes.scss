@@ -5,8 +5,8 @@
   background: orangered;
   // outline: 1px solid green;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: "";
     }
 }
@@ -45,8 +45,15 @@
 }
 
 /* Inifinity */
-.shape--infinity,
-.shape--infinity:after {
+.shape--infinity {
+  background: none;
+  width: calc(250px - 1em);
+  height: calc(250px - 1em);
+  transform: rotate(45deg);
+}
+.shape--infinity::before,
+.shape--infinity::after {
+  position: absolute;
   width: 125px;
   height: 125px;
   background: none;
@@ -54,14 +61,13 @@
   box-sizing: border-box;
   border-radius: 100% 0 100% 100%;
   }
-  .shape--infinity {
-    left: -70px;
-    transform: rotate(45deg);
+  .shape--infinity::before {
+    left: 0;
+    bottom: 0;
     }
-  .shape--infinity:after {
-    position: absolute;
-    top: -125px;
-    left: 100%;
+  .shape--infinity::after {
+    right: 0;
+    top: 0;
     border-radius: 100% 100% 100% 0;
     }
 
@@ -75,7 +81,7 @@
   border-radius: 50%;
   transform: rotate(-45deg);
   }
-  .shape--smile:before {
+  .shape--smile::before {
     position: absolute;
     left: 2.75em;
     top: 0em;
@@ -88,8 +94,8 @@
 
 /* Star */
 .shape--star,
-.shape--star:before,
-.shape--star:after {
+.shape--star::before,
+.shape--star::after {
     background: none;
     border-style: solid;
     }
@@ -99,20 +105,20 @@
     border-color: yellowgreen transparent;
     border-width: 75px 150px 0;
     }
-.shape--star:before,
-.shape--star:after {
+.shape--star::before,
+.shape--star::after {
     position: absolute;
     top: -165px;
     border-color: transparent yellowgreen;
     border-width: 5em 2em 3em;
     border-width: 150px 65px 120px;
     }
-  .shape--star:before {
+  .shape--star::before {
       left: -55px;
       border-right: 0;
       transform: rotate(23deg);
       }
-  .shape--star:after {
+  .shape--star::after {
       left: -10px;
       border-left: 0;
       transform: rotate(-23deg);
@@ -129,7 +135,7 @@
   border-radius: 50%;
   box-shadow: 4em 0 0 0 gold
   }
-.shape--heart:before {
+.shape--heart::before {
   content: "";
   display: block;
   position: absolute;
@@ -150,7 +156,7 @@
   border-right-color: transparent;
   border-radius: 50%;
   }
-  .shape--arrow:after {
+  .shape--arrow::after {
     display: block;
     position: absolute;
     top: -25px;
@@ -204,7 +210,7 @@
   border-left-width: 3em;
   font-size: 1.25em;
   }
-  .shape--flag:after {
+  .shape--flag::after {
     position: absolute;
     left: -4em;
     top: -2em;
