@@ -62,6 +62,12 @@ H4 + .demo{
   }
 }
 
+.demo--bullets {
+  // dirty hack for jumping slides
+  height: 490px;
+  overflow: hidden;
+}
+
 .demo--mask-images {
   flex-wrap: nowrap;
 

@@ -1,3 +1,9 @@
+.about-slide__content {
+  // dirty hack for jumping slides
+  height: 490px;
+  overflow: hidden;
+}
+
 .about-slide__author {
   position: relative;
   display: flex;

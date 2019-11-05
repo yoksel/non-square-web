@@ -97,5 +97,7 @@
 }
 
 .img-screen {
+  // dirty hack for jumping slides
   max-height: 100%;
+  height: 480px;
 }
