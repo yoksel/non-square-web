@@ -38,7 +38,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-zip": "^4.0.0",
     "merge-stream": "^1.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "path-exists-cli": "^1.0.0",
     "postcss": "^7.0.7",
     "shower-cli": "^0.2.3"
